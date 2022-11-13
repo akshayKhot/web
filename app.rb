@@ -1,11 +1,23 @@
+require 'erb'
+
 class App
   def call(env)
-    headers = {
-      'Content-Type' => 'text/html'
-    }
+    headers = { 'Content-Type' => 'text/html' }
     
-    response = ['<h1>Hello World!</h1>']
-    
-    [200, headers, response]
+    title = get_title(env) # new code here
+    template = ERB.new(template_html)
+    response_html = template.result(binding)
+
+    [200, headers, [response_html]]
+  end
+
+  def get_title(env)
+    query = env['QUERY_STRING'] # "title=ruby"
+    values = query.split('=')   # ["title", "ruby"]
+    values[1]                   # ruby
+  end
+
+  def template_html
+    File.read 'views/index.html.erb'
   end
 end

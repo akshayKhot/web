@@ -8,6 +8,20 @@
   <body>
     <main>
 		<h1><%= title %></h1>
+    <div>
+      <h1>Tasks</h1>
+      <ul>
+        <% tasks.each do |task| %>
+          <li>
+            <% if task.completed %>
+            <strike><%= task.print %></strike>
+            <% else %>
+              <%= task.print %>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
     </main>
   </body>
 </html> 

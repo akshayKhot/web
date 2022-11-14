@@ -1,4 +1,5 @@
 require 'erb'
+require './task.rb'
 
 class App
   def call(env)
@@ -6,8 +7,9 @@ class App
     
     title = get_title(env) # new code here
     template = ERB.new(template_html)
-    response_html = template.result(binding)
+    tasks = Task.all
 
+    response_html = template.result(binding)
     [200, headers, [response_html]]
   end
 

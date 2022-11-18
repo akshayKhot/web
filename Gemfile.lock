@@ -10,6 +10,7 @@ GEM
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     minitest (5.16.3)
+    mysql2 (0.5.4)
     nio4r (2.5.8)
     puma (6.0.0)
       nio4r (~> 2.0)
@@ -23,6 +24,7 @@ PLATFORMS
 DEPENDENCIES
   activesupport (~> 7.0)
   minitest (~> 5.16)
+  mysql2 (~> 0.5.4)
   puma (~> 6.0)
   rake (~> 13.0)
 

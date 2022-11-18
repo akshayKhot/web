@@ -1,4 +1,4 @@
-require './database.rb'
+require_relative '../core/database.rb'
 
 class Task
   extend Database

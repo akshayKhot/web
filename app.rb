@@ -1,5 +1,5 @@
 require 'erb'
-require './task.rb'
+require_relative './models/task.rb'
 
 class App
   def call(env)
